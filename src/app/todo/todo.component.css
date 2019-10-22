@@ -1,0 +1,61 @@
+
+.todo-container {
+    width:600px;
+    padding: 60px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: left;
+    color:black;
+    font-size:32px;
+    margin-top:4px;
+    margin-bottom:0px;
+    font-weight: 300;
+  }
+
+  h4 {
+    font-family: 'Droid Serif', serif;
+    text-align: left;
+    color:gray;
+    margin-top:6px;
+    font-weight: normal;
+  }
+
+.todoInput {
+    border: 1px solid lightseagreen;
+    height: 22px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    margin-top:20px;
+}
+
+button.addTask {
+    background-color: lightseagreen;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    height: 55px;
+    margin-top: 20px;
+    width: 30%;
+    border-radius: 8px;
+}
+
+button.btn {
+    background-color:white;
+    color:lightseagreen;
+    font-size: 15px;
+    font-weight: bold;
+    height: 25px;
+    margin-top: 10px;
+    width: 20%;
+    border-radius: 8px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
