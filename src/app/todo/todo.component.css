@@ -39,21 +39,39 @@ button.addTask {
     color:white;
     font-size: 15px;
     font-weight: bold;
-    height: 55px;
+    height: 35px;
     margin-top: 20px;
-    width: 30%;
+    width: 20%;
     border-radius: 8px;
 }
 
-button.btn {
-    background-color:white;
+button.complete {
     color:lightseagreen;
+    background-color:white;
+    border: 1px solid lightseagreen;
+    font-size: 12px;
+    font-weight: bold;
+    height: 35px;
+    margin-top: 10px;
+    width: 15%;
+    border-radius: 8px;
+}
+
+button.remove {
+    background-color:lightseagreen;
+    border: 1px solid lightseagreen;
+    color:white;
     font-size: 15px;
     font-weight: bold;
     height: 25px;
     margin-top: 10px;
-    width: 20%;
-    border-radius: 8px;
+    width: 25px;
+    border-radius: 10px;
+}
+
+span {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .strike {

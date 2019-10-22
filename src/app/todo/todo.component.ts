@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { isNgTemplate } from '@angular/compiler';
+import { discardPeriodicTasks } from '@angular/core/testing';
 
 interface Todo {
    task:string;
-   completed:boolean; 
+   completed:boolean;
 }
 
 @Component({
@@ -13,7 +15,8 @@ interface Todo {
 
 export class TodoComponent {
   title = 'To Do List in Angular';
- newTask : string ='';
+  completed: boolean = false;
+  newTask : string ='';
   tasks: Todo[] = [
     {completed:false, task: 'Buy Ziggy food'},
     {completed:true, task: 'Get coffee'},
@@ -21,20 +24,37 @@ export class TodoComponent {
     {completed:true, task: 'Go to the market'},
   ]
 
+  filterTask: string = "";
+  filteredTaskItems = [...this.tasks];
 
-complete:boolean = true;
-    completeTask (){
-        this.complete = false;
-}
+  removeCompleteTask(tasks: Todo){
+    const index = this.tasks.indexOf(tasks, 0);
+    if (index > -1) {
+    this.tasks.splice(index, 1)
+    this.filteredTaskItems = [...this.tasks];
+    }
+  }
 
-addTodo() {
+  filterTaskItems() {
+    this.filteredTaskItems = this.tasks.filter(
+      item => item.task.toLowerCase().indexOf(this.filterTask.toLowerCase()) > -1);
+      if (!this.filterTask){
+        this.filteredTaskItems = [...this.tasks];
+      }
+  }
+
+addTask() {
     const newItem = {
         task: this.newTask,
         completed: false,
     };
       this.tasks.push(newItem);
+      this.filteredTaskItems = [...this.tasks];
       this.newTask=null;
+}
 
+completeTask (tasks: Todo){
+  tasks.completed = !tasks.completed;
 }
 
 }
